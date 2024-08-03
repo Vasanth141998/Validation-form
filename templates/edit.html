@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{%block body%}
+
+<div class="row">
+    <div class="col-5 mx-auto">
+        <h1>ADD USER</h1>
+        <form method="POST" action="{{url_for('edit',uid=datas.id)}}">
+            <div class="form-group">
+                <label>USER NAME</label>
+                <input type="text" name="name" required class="form-control" value="{{datas.name}}">
+            </div>
+            <div class="form-group">
+                <label>CONTACT</label>
+                <input type="text" name="contact" required class="form-control" value="{{datas.contact}}">
+
+            </div>
+            <div class="form-group">
+                <label>COURSE</label>
+                <input type="text" name="course" required class="form-control">
+            </div>
+            
+            <br>
+            <input type="submit" value="submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{%endblock%}

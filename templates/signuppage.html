@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>Registration</title>
+		<style>
+
+			body {background-image:url("static/sign.jpg");
+				background-size:cover;}
+			input {padding:15px;border:4px solid gray}
+			#name {position:relative;top:10px;left:150px}
+			#username {position:relative;top:110px;right:146px}
+			#mobileno {position:relative;top:210px;right:440px}
+			#password {position:relative;top:305px;right:735px}
+			#confirmpassword {position:relative;top:335px;left:153px}
+			#sub {position:relative;top:350px;left:200px}
+			form {margin-left:30px;}
+			p {display:inline-block;font-size:40px;position:relative;top:10px;left:570px;padding:5px;
+				border-radius:20px;}
+		</style>
+	</head>
+	<body >
+		<p>Register</p>
+		<form  action="/signup" method='post'> 
+			
+			
+		
+		<table class="o"></table>
+					
+			<tr>
+				<td><input name="name" id="name" type ="text" placeholder="Enter Name" size="30" required ></td>
+			   
+			</tr>
+					
+			<tr>
+			   
+			    <td><input name="u_name" id="username" type ="text" size="30" placeholder="Enter UserName" required autocomplete="on"></td>
+			</tr>
+			<tr>
+			     
+			     <td><input name="m_no" id="mobileno" type ="text" size="30" placeholder="Enter Mobile Number" required autocomplete="on"></td>
+			</tr>
+					
+			<tr>
+			     
+			      <td><input name="pass" id="password" type ="Password" size="30" placeholder="Enter Password" required autocomplete="on"></td>
+			</tr>
+					
+			<tr>
+			       
+			       <td><input name="c_pass" id="confirmpassword" type ="Password" size="30" placeholder="Enter Confirm Password" required autocomplete="on"></td>
+			</tr>
+					
+			<input type="submit" id = "sub">
+					
+		</table>	
+		</form>
+		</body>
+</html>

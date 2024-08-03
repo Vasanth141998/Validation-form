@@ -1,0 +1,51 @@
+
+<style>
+
+    body {
+        
+        background-size:cover;
+    }
+    </style>
+    <body>
+    
+    {% extends "layout.html" %}
+    {%block body%}
+        
+        
+        <p  class="text-end"><a href="{{url_for('add')}}" class="btn btn-success">+Add Student</a></p>
+        
+    
+        <table class="table table-bordered">
+            <thead  style="color: rgb(173, 164, 81)">
+                <th>SNo</th>
+                <th><b>NAME</b></th>
+                <th>CONTACT</th>
+                <th>COURSE</th>
+    
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </thead>
+            <tbody>
+                {% for row in datas%}
+                <tr style="color: red">
+                    <td>{{loop.index}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.contact}}</td>
+                    <td>{{row.course}}</td>
+                    <td><a href="{{url_for('edit',uid=row.id)}}" class="btn btn-primary">EDIT</a></td>
+                    <td><a href="{{url_for('delete',uid=row.id)}}" class="btn btn-danger" onclick=" return confirm('are you sure')">DELETE</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+    
+    
+        </table>
+    
+    
+    
+    
+    
+    
+    
+    {% endblock %}
+    </body>

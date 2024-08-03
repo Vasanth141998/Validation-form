@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial scale=1.0">
+    <title>User login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        body {
+        background-image:url("static/back.jpg");
+	    background-size: 100% auto; 
+        background-repeat: no-repeat;
+        
+	    
+        }
+        form {
+            display:inline-block;
+            margin-top:20px;
+            margin-left:400px;
+            padding-right:70px;
+            padding-bottom:50px;
+
+        }
+        td {
+            font-size:20px;
+            padding:20px
+        }
+        #login {
+            background-color:rgb(76, 198, 235);
+            text-align:center;
+            position:relative;
+            left:470px;
+            bottom:210px;
+            padding:12px;
+            border-radius:40px;
+            font-size:25px
+        }
+
+        #username {
+            border:5px solid black;
+            border-radius:7px;
+            padding:10px;
+            padding-left:55px;
+            font-size:25px;
+            color:brown;
+        }
+        #password {
+            border:5px solid black;
+            border-radius:7px;
+            padding:10px;
+            padding-left:60px;
+            font-size:25px
+        }
+        img {
+            position:relative;
+            bottom:5px;
+            left:55px;
+	        opacity:0.9
+        }
+        #movepassimg {
+            position:relative;
+            
+            left:60px;
+	    opacity:0.9
+        }
+        #forgot {
+            font-size:25px;
+            position:relative;
+            left:80px;
+            bottom:25px;
+        }
+        #signup {
+            font-size:25px;
+            position:relative;
+            left:490px;
+            bottom:200px;
+            color:rgb(17, 18, 19)
+        }
+        a {
+            text-decoration:none;
+
+        }
+        a:hover {
+            color:red;
+        }
+        #login:hover {
+            background-color:tomato
+        }
+        #msg {
+            color:red;
+            position: relative;
+            bottom:330px;
+            left:750px;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    {% for message in get_flashed_messages()%}
+        {% if message %}
+            <p class="alert alert-danger">{{message}}</p>
+        {% endif %}
+    {% endfor %}
+<form action="/" method="post">
+    <table>
+     <tr>
+        <td>
+            <img src="/static/user.png" width="45" height="40">
+            <input type="text" id="username" maxlength="10" name="luname" size="16" placeholder="Enter User Name" required  autocomplete="off">
+        </td>
+     </tr>
+    <tr>
+        <td>
+            <img src="/static/password.png" id="movepassimg" width="50" height="40">
+            <input type="password" id="password" maxlength="10" name="lpass" size="15" placeholder="Enter Password" required autocomplete="off">
+        </td>
+    </tr>
+    </table>
+
+    <p id="forgot"><a href="#">Forgot Password?</a></p>
+
+    <input type="submit" value="Login" id="login" style="background-color:rgb(170, 168, 153);border:2px solid rgb(0, 0, 0);font-size:25px;padding:10px 90px;border-radius:25px;">
+    <p id="signup" >Not A Member? <a href="/signup">Signup Now</a></p>
+    
+</form> 
+</body>
+</html>
